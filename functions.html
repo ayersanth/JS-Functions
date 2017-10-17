@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+
+	<button id="button">Click Me!</button>
+
+	<h1 class="my-title">Hello World</h1>
+
+	<p id="cost"></p>
+
+	<section class="space"></section>
+
+
+<script>
+
+	// create your function
+	// This is a function declaration
+	function myFunction (){
+		var obj = {name: "Anthony"};
+		obj.age = 28;
+		console.log(obj);
+		delete obj.age;
+		console.log(obj);
+	}
+
+	// invoke your function (nothing will happen if you dont do this)
+	myFunction();
+
+	// This is a function expression
+	var myFunctionB = function(parameterA, parameterB){
+		console.log(parameterA + parameterB);
+	}
+
+	// myFunctionB has 2 undefined parameters but when you call the function you can give these parameters a value.
+	myFunctionB("Hi", " There");
+
+	var myFunctionAdd = function(a, b){
+		console.log("a ")
+		return a + b;
+	}
+	// to get the console to display the addition of a+b you need to trigger the function inside of it.
+	console.log(myFunctionAdd(10, 30));
+
+
+	// this is an example of how you can use functions to define variables. 
+	// 1.Define a function 
+	// 2.Define your variables and give the parameters of your function values in the function invocation 
+	// 3.console.log the variables
+	function calculateArea(width, height) {
+		var area = width * height;
+		return area;
+	}
+
+	var wallOne = calculateArea(3, 5);
+	var wallTwo = calculateArea(8, 5);
+	
+	console.log(wallOne);
+	console.log(wallTwo);
+
+	// Here I specify the parameter values in an object and later call the object in the invocation
+	var objTwo = {width: 5, height: 10};
+
+	var wallThree = calculateArea(objTwo.width, objTwo.height);
+
+	console.log(wallThree);
+
+	// Here I specify the parameter values in an array within an object
+	var objFour = {a: [5, 5]};
+
+	var wallFour = calculateArea(objFour.a[0], objFour.a[1]);
+
+	console.log(wallFour);
+
+</script>
+</body>
+
+</html>

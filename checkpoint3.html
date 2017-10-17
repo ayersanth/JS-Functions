@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div class='container'>
+
+		<div class='row'>
+			
+			<div class='col-xs-6 box one'><p class='text'>ONE<p></div>
+			<div class='col-xs-6 box two'><p class='text'>TWO<p></div>
+
+		</div>
+
+		<div class='row'>
+			
+			<div class='col-xs-6 box three'><p class='text'>THREE<p></div>
+			<div class='col-xs-6 box four'><p class='text'>FOUR<p></div>
+
+		</div>
+
+	</div>
+
+	
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+	<script>
+		// Here I've taken some script I wrote previously and wrapped it in a function for which ive defined some parameters. Then I've moved the values into an object (objColours) and finally I've invoked the function with the variables defined in the object.
+
+		var objColours = {
+			callBkgd: "background-color", 
+			changeBkgd: "#aaaaaa",
+			callText: "color",
+			changeText: "white"
+		}
+
+		function math(a, b){
+			return a * b;
+		}
+
+
+		function clickDbl(bColour, bColourChange, tColour, tColourChange){
+
+			$('.box').dblclick(function(){
+
+				console.log('a');
+				$(this).fadeOut(math(2, 1000),function(){
+					
+					console.log('b')
+					$(this).css(bColour, bColourChange).css(tColour, tColourChange);
+
+				})
+				.fadeIn(2000);
+
+
+			});
+		}	
+
+		clickDbl(objColours.callBkgd, objColours.changeBkgd, objColours.callText, objColours.changeText);
+		
+
+
+
+
+
+		// $('.box').dblclick(function(){
+
+		// 	console.log('a');
+		// 	$(this).fadeOut(2000,function(){
+				
+		// 		console.log('b')
+		// 		$(this).css("background-color", "#aaaaaa").css("color", "white");
+
+		// 	})
+		// 	.fadeIn(2000);
+
+
+		// })
+
+
+	</script>
+
+</body>
+
+</html>
