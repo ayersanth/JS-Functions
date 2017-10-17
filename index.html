@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+
+	<button id="button">Click Me!</button>
+
+	<h1 class="my-title">Hello World</h1>
+
+	<p id="cost"></p>
+
+	<section class="space"></section>
+
+
+<script>
+
+	// create your function
+	// This is a function declaration
+	function myFunction (){
+		var obj = {name: "Anthony"};
+		obj.age = 28;
+		console.log(obj);
+		delete obj.age;
+		console.log(obj);
+	}
+
+	// invoke your function (nothing will happen if you dont do this)
+	myFunction();
+
+	// This is a function expression
+	var myFunctionB = function(parameterA, parameterB){
+		console.log(parameterA + parameterB)
+	}
+
+	// myFunctionB has 2 undefined parameters but when you call the function you can give these parameters a value.
+	myFunctionB("Hi", " There");
+	myFunctionB(10, 30)
+	
+
+</script>
+</body>
+
+</html>
