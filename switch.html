@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+
+<body>
+	
+	<p id="demo"></p>
+
+	<script>
+		
+		switch (new Date().getMonth()){
+			// Fix This (each case can only have one string trigger)
+			case "Dec":
+				text = "It's Summer! So take off all your clothes";
+				break;
+			case "Jan":
+				text = "It's Summer! So take off all your clothes";
+				break;
+			case "Mar", "Apr", "May":
+				text = "It's Autunm! Go look at some trees";
+				break;
+			case "Jun", "Jul", "Aug":
+				text = "It's Winter! Get those clothes back on";
+
+			default:
+				text = "It's Spring! Go pat a lamb";
+
+		}
+
+		console.log(new Date());
+
+		document.getElementById("demo").innerHTML = text;
+
+	</script>
+	
+</body>
+
+</html>

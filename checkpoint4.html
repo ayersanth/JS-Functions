@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+
+<body>
+	
+
+	<script>
+		// example of an IIFE
+		(function(){
+
+			var configObj = {
+				option1: 123,
+				option2: 456
+			}
+
+		// do stuff
+		console.log(configObj.option1);
+
+		})();
+
+
+		// example of putting functions inside an IIFE.
+		(function(){
+
+			function myFunction(){
+
+					var configObj = {
+						option1: 123, 
+						option2: 456
+					};
+
+					// Note: you can call functions inside of functions.
+					console.log(myFunction2());
+
+					// Note: nothing under the return statement is processed within the same function.
+					return configObj.option2;
+
+				}
+
+				function myFunction2(){
+
+					var objTwo = {
+						hair: "Brown",
+						eyes: "Green Eyes",
+						waist: "Large"
+					};
+
+					var arrayOne = [5, 4, 3];
+
+					return arrayOne[0] + " " + objTwo.waist + " " + objTwo.eyes;
+
+				}
+
+			console.log(myFunction());
+
+	    })();
+
+
+	    // Note: declaration functions can be called from above or below.
+	    declarationA();
+
+	    function declarationA(){
+	    	alert("Hoisted");
+	    }
+
+	    // Where as expression functions can only be called after they are defined.
+	    var expressionA = function(){
+	    	// you can't
+	    	alert("Hoisted EX");
+	    }
+
+	    expressionA();
+	    
+	</script>
+	
+</body>
+
+</html>

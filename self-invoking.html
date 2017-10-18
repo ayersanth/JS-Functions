@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div class='container'>
+
+		<div class='row'>
+			
+			<div class='col-xs-6 box one'><p class='text'>ONE<p></div>
+			<div class='col-xs-6 box two'><p class='text'>TWO<p></div>
+
+		</div>
+
+		<div class='row'>
+			
+			<div class='col-xs-6 box three'><p class='text'>THREE<p></div>
+			<div class='col-xs-6 box four'><p class='text'>FOUR<p></div>
+
+		</div>
+
+	</div>
+
+	
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+
+	<script>
+		
+		// You can put anything within a self invoking function and it will fire itself. start with (function(){  end with  })();
+		// These are called IIFEs Immediatly Invoked Function Expression.
+
+		// Note though that variables inside of fuctions are private, where as variables outside are global.
+		(function(){
+			alert("Get Out!")
+			console.log("a ");
+		})();
+
+		var objColours = {	/* this variable is global */
+			callBkgd: "background-color", 
+			changeBkgd: "#aaaaaa",
+			callText: "color",
+			changeText: "white"
+		}
+
+		function math(a, b){
+			return a * b;
+		}
+
+		(function (bColour, bColourChange, tColour, tColourChange){
+
+			$('.box').dblclick(function(){
+
+				console.log('a');
+				$(this).fadeOut(math(2, 1000),function(){
+					
+					console.log('b')
+					$(this).css(bColour, bColourChange).css(tColour, tColourChange);
+					var private = "I'm private";	/* this variable is private */
+
+				})
+				.fadeIn(2000);
+
+
+			});
+		})();	
+
+		// Function expression 
+		var anotherFunctionPattern = function(){
+			console.log("i'm working");
+		}();
+
+		
+		
+		console.log(new Date().getDay());
+		
+
+	</script>
+
+</body>
+
+</html>
